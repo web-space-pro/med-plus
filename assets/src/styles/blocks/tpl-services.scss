@@ -1,6 +1,6 @@
 @use '../helpers' as *;
 
-.tplSpecialist{
+.tplServices{
   padding-top: rem(40);
   margin-bottom: rem(40);
   &__heading{
@@ -27,10 +27,10 @@
   }
   &__loop{
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: rem(24);
     @include media(md){
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
     @include media(xl){
       grid-template-columns: repeat(4, 1fr);
@@ -38,27 +38,25 @@
   }
 }
 
-.specialist{
+.services{
   &__card{
     border-radius: 8px;
     padding: 16px;
     background: var(--color-light-10);
     transition: all .3s ease-in-out;
-    width: rem(250);
-    margin: 0 auto;
-    @include media(md){
-      width: 100%;
-    }
     &:hover{
       box-shadow: 0 0 5px var(--color-secondary);
     }
   }
   &__photo{
     background: linear-gradient(135deg, #72e0e0 0%, #5fbeed 50%, #1470cc 100%);
-    height: rem(232);
+    height: rem(100);
     border-radius: 8px;
     overflow: hidden;
     position: relative;
+    @include media(md){
+      height: rem(176);
+    }
     .post-thumbnail{
       position: absolute;
       width: 100%;
@@ -83,19 +81,15 @@
     font-size: 12px;
     color: var(--color-dark-40);
   }
-  &__speciality{
-    font-weight: 400;
-    font-size: rem(12);
-    color: var(--color-gray-20);
-  }
-  &__author{
+  &__title{
     margin-top: rem(16);
     margin-bottom: rem(10);
     h3{
       font-weight: 400;
-      font-size: rem(16);
+      @include fluid-text(20, 14);
       color: var(--color-black);
       margin: 0;
+      padding-right: 30%;
     }
   }
 }
