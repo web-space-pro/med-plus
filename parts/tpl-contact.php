@@ -7,7 +7,7 @@ if ( function_exists('get_field') ) {
 }
 ?>
 
-<section class="tplContact">
+<section id="#callback" class="tplContact">
     <div class="container-secondary">
         <div class="tplContact__bg">
             <div>

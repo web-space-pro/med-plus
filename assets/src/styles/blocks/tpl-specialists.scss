@@ -12,6 +12,9 @@
      flex-direction: row;
       align-items: end;
     }
+    span{
+      color: var(--color-dark);
+    }
   }
   .title{
     margin-bottom: rem(16);

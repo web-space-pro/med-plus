@@ -13,6 +13,7 @@ body {
   font-family: var(--font-family-base);
   color: var(--color-dark-40);
   background-color: var(--color-light);
+  font-weight: 400;
   &.t-overflow{
     overflow: hidden;
   }

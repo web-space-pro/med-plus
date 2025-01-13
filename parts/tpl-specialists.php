@@ -18,7 +18,7 @@ $args = array(
 
 $specialist_loop = new WP_Query($args);
 ?>
-<section class="tplSpecialist">
+<section id="specialist" class="tplSpecialist">
     <div class="container">
         <div class="tplSpecialist__heading">
             <?php if(!empty($title)) : ?>
