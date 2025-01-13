@@ -1,7 +1,12 @@
-@use 'normalize';
-@use 'fonts';
-@use 'variables';
-@use 'utils';
-@use 'globals';
+@import 'normalize';
+@import 'fonts';
+@import 'variables';
+@import 'utils';
+@import 'globals';
 
-@use 'blocks/header';
+@import 'blocks/logo';
+@import 'blocks/btnMenu';
+@import 'blocks/ctaIconBlock';
+@import 'blocks/icon';
+@import 'blocks/button';
+@import 'blocks/header';

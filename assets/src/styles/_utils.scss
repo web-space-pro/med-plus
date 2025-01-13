@@ -11,13 +11,14 @@
 }
 
 .hidden-mobile {
-  @include mobile {
+  @include media(lg){
     display: none !important;
   }
+
 }
 
 .visible-mobile {
-  @include mobile-above {
+  @include media(lg) {
     display: none !important;
   }
 }
