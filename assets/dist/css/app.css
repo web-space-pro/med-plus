@@ -814,3 +814,124 @@ button[aria-label] {
     translate: 100%;
   }
 }
+
+.footer {
+  padding-top: 3.125rem;
+  padding-bottom: 1.875rem;
+}
+.footer .title {
+  font-size: clamp(1.125rem, 0.923553719rem + 0.826446281vw, 1.75rem);
+  margin-bottom: 1.5rem;
+}
+.footer__top {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+@media (min-width: 576px) {
+  .footer__top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .footer__top {
+    grid-template-columns: repeat(3, 1fr);
+    -moz-column-gap: 1.25rem;
+         column-gap: 1.25rem;
+    padding-bottom: 2.5rem;
+  }
+}
+.footer__top > div {
+  padding-bottom: 1.25rem;
+}
+@media (min-width: 768px) {
+  .footer__top > div {
+    padding-bottom: 0rem;
+  }
+}
+.footer__bottom {
+  border-top: 1px solid var(--color-gray-10);
+  padding-top: 1.5rem;
+  color: var(--color-dark-40);
+}
+.footer__bottom .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
+}
+.footer__contacts {
+  order: 3;
+}
+@media (min-width: 576px) {
+  .footer__contacts {
+    order: 1;
+  }
+}
+.footer__contacts ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  color: var(--color-dark);
+}
+.footer__contacts ul span {
+  color: var(--color-gray-20);
+  display: block;
+}
+.footer__contacts ul li {
+  margin-bottom: 0.625rem;
+}
+.footer__menu {
+  order: 2;
+}
+.footer__menu li {
+  position: relative;
+  display: block;
+  margin-bottom: 0.625rem;
+}
+.footer__menu li a {
+  display: inline-block;
+  text-decoration: none;
+}
+.footer__menu li .caret {
+  right: auto;
+}
+.footer__info {
+  font-weight: 400;
+  order: 1;
+}
+@media (min-width: 576px) {
+  .footer__info {
+    order: 3;
+  }
+}
+.footer__info .logo {
+  margin-bottom: 1.5rem;
+}
+.footer__info div {
+  font-weight: 400;
+  color: var(--color-dark-40);
+  margin-bottom: 0.125rem;
+}
+.footer__info div:last-child {
+  color: var(--color-gray-20);
+  margin-bottom: 0rem;
+  margin-top: 1.25rem;
+}
+.footer__copyright {
+  max-width: 16.25rem;
+}
+.footer__develop {
+  max-width: 8.125rem;
+  margin: 0 0 0 auto;
+}
+.footer__develop a {
+  text-decoration: none;
+}
+.footer__develop span {
+  display: block;
+  color: var(--color-accent);
+}
