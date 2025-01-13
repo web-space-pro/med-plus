@@ -209,6 +209,7 @@ svg * {
   --color-secondary: #7297e0;
   --font-family-base: "Involve", sans-serif;
   --container-width: 70.625rem;
+  --container-width-secondary: 75rem;
   --container-padding-x: 1rem;
   --transition-duration: 0.2s;
   --100vw: calc(100vw - var(--scrollbar-width));
@@ -218,11 +219,18 @@ svg * {
 @media (min-width: 1440.98px) {
   :root {
     --container-width: 90rem;
+    --container-width-secondary: 93.75rem;
   }
 }
 
 .container {
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.container-secondary {
+  max-width: calc(var(--container-width-secondary) + var(--container-padding-x) * 2);
   margin-inline: auto;
   padding-inline: var(--container-padding-x);
 }
@@ -324,8 +332,10 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: clamp(1.75rem, 1.145661157rem + 2.479338843vw, 3.625rem);
-  line-height: 1.3;
+  font-size: clamp(1.75rem, 1.5082644628rem + 0.9917355372vw, 2.5rem);
+  font-weight: 400;
+  line-height: 120%;
+  color: var(--color-dark-40);
 }
 
 h3, .h3 {
@@ -373,12 +383,6 @@ a {
 }
 a[class] {
   text-decoration: none;
-}
-
-:focus-visible {
-  outline: 0.125rem dashed var(--color-secondary);
-  outline-offset: 0.25rem;
-  transition-duration: 0s !important;
 }
 
 a[aria-label],
@@ -542,6 +546,93 @@ button[aria-label] {
 }
 .button--dark-gray {
   background-color: var(--color-dark-10);
+}
+
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+input[type=search],
+input[type=number],
+input[type=tel],
+input[type=range],
+input[type=date],
+input[type=month],
+input[type=week],
+input[type=time],
+input[type=datetime],
+input[type=datetime-local],
+input[type=color],
+textarea {
+  border-radius: var(--rounded-8);
+  padding: 1.25rem 2rem;
+  width: 100%;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--color-gray-20);
+  border: 1px solid var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+input::-moz-placeholder {
+  color: var(--color-gray-30);
+}
+
+input::placeholder {
+  color: var(--color-gray-30);
+}
+
+button,
+input[type=button],
+input[type=submit] {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0.875rem 1.0625rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-light);
+  white-space: nowrap;
+  border: var(--border);
+  border-radius: var(--rounded-8);
+  transition: all, 0.3s ease;
+  cursor: pointer;
+}
+
+button:active,
+button:focus,
+button:hover,
+input[type=button]:hover,
+input[type=button]:active,
+input[type=button]:focus,
+input[type=submit]:active,
+input[type=submit]:hover,
+input[type=submit]:focus {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=number]:focus,
+input[type=tel]:focus,
+input[type=range]:focus,
+input[type=date]:focus,
+input[type=month]:focus,
+input[type=week]:focus,
+input[type=time]:focus,
+input[type=datetime]:focus,
+input[type=datetime-local]:focus,
+input[type=color]:focus,
+textarea:focus {
+  outline: none;
+  border: 1px solid var(--color-accent);
 }
 
 .header {
@@ -934,4 +1025,122 @@ button[aria-label] {
 .footer__develop span {
   display: block;
   color: var(--color-accent);
+}
+
+.tplContact {
+  text-align: center;
+}
+.tplContact__bg {
+  border-radius: 20px;
+  background: var(--color-light-10);
+  padding: 2.5rem 1.25rem;
+}
+.tplContact .title {
+  margin-bottom: 1.125rem;
+}
+@media (min-width: 768px) {
+  .tplContact .title {
+    margin-bottom: 1.5rem;
+  }
+}
+.tplContact .title span {
+  display: block;
+  color: var(--color-secondary);
+}
+.tplContact .subtitle {
+  font-size: clamp(0.875rem, 0.8145661157rem + 0.2479338843vw, 1.0625rem);
+  font-weight: 400;
+  margin-bottom: 1.125rem;
+  color: var(--color-gray-20);
+}
+@media (min-width: 768px) {
+  .tplContact .subtitle {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.wpcf7-form {
+  max-width: 46.875rem;
+  margin: 0 auto;
+}
+.wpcf7-form label {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.wpcf7-form label .iconInput {
+  position: absolute;
+  left: 1.0625rem;
+  top: -53%;
+  z-index: 1;
+  color: var(--color-secondary);
+}
+@media (min-width: 768px) {
+  .wpcf7-form label .iconInput {
+    top: 22%;
+    left: 2.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .wpcf7-form .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.wpcf7-form .wpcf7-form-control {
+  border-color: var(--color-light);
+  padding: 1.125rem;
+  padding-left: 3.375rem;
+}
+@media (min-width: 768px) {
+  .wpcf7-form .wpcf7-form-control {
+    padding: 1.5rem;
+    padding-left: 4.625rem;
+  }
+}
+@media (min-width: 768px) {
+  .wpcf7-form .wpcf7-form-control {
+    width: 94%;
+  }
+}
+.wpcf7-form .wpcf7-form-control:focus {
+  border: 1px solid var(--color-accent);
+}
+.wpcf7-form .wpcf7-submit, .wpcf7-form .wpcf7-acceptance {
+  display: block;
+  max-width: 22.5rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.125rem;
+  padding-left: 1.5rem;
+}
+@media (min-width: 768px) {
+  .wpcf7-form .wpcf7-submit, .wpcf7-form .wpcf7-acceptance {
+    padding: 1.5rem;
+  }
+}
+.wpcf7-form .wpcf7-acceptance {
+  font-weight: 400;
+  max-width: 21.25rem;
+  margin: 0 auto;
+  font-size: 0.75rem;
+  color: var(--color-gray-20);
+  padding: 0;
+  margin-top: 0.75rem;
+}
+.wpcf7-form .wpcf7-spinner {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.wpcf7-form .wpcf7-not-valid-tip {
+  font-size: 0.75rem;
+  display: none;
+}
+.wpcf7-form .wpcf7-response-output {
+  max-width: 29.375rem;
+  margin: 1rem auto !important;
+  font-size: 0.875rem;
+  border: none !important;
+  display: block;
 }
