@@ -1,4 +1,5 @@
 @import 'normalize';
+@import 'vendors';
 @import 'fonts';
 @import 'variables';
 @import 'utils';
@@ -12,8 +13,15 @@
 @import 'blocks/formControl';
 @import 'blocks/header';
 @import 'blocks/footer';
+@import 'blocks/metrics';
+@import 'blocks/bannerSlider';
+@import 'blocks/accordion';
+@import 'blocks/card-cost';
 
 @import 'blocks/tpl-contact';
 @import 'blocks/tpl-specialists';
 @import 'blocks/tpl-aboutUs';
 @import 'blocks/tpl-services';
+@import 'blocks/tpl-metrics';
+@import 'blocks/tpl-welcome';
+@import 'blocks/tpl-cardCost';

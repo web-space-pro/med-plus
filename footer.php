@@ -11,38 +11,38 @@
 
 ?>
 
+<?php
+if (function_exists('get_field')) {
+    $h_contact = get_field('op_footer_header_contacts', 'options');
+    $list_contact = get_field('op_fiiter_contacts_list', 'options');
+    $h_menu = get_field('op_footer_header_menu', 'options');
+    $description = get_field('op_footer_descriptions', 'options');
+}
+?>
 	<footer class="footer">
         <div class="container">
             <div class="footer__top">
                 <div class="footer__contacts">
-                    <h3 class="title">Контакты</h3>
+                    <?php if(!empty($h_contact)): ?>
+                    <h3 class="title"><?=$h_contact;?></h3>
+                    <?php endif; ?>
                     <div>
+                        <?php if(!empty($list_contact)): ?>
                         <ul>
+                            <?php foreach ($list_contact as $item): ?>
                             <li>
-                                <span>Клиника</span>
-                                Краснодар, улица Трамвайная, 15/1
+                                <span><?=$item['title'];?></span>
+                                <?=$item['text'];?>
                             </li>
-                            <li>
-                                <span>Клиника</span>
-                                Краснодар, улица Трамвайная, 15/1
-                            </li>
-                            <li>
-                                <span>Клиника</span>
-                                Краснодар, улица Трамвайная, 15/1
-                            </li>
-                            <li>
-                                <span>Клиника</span>
-                                Краснодар, улица Трамвайная, 15/1
-                            </li>
-                            <li>
-                                <span>Клиника</span>
-                                Краснодар, улица Трамвайная, 15/1
-                            </li>
+                            <?php endforeach; ?>
                         </ul>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <div class="footer__menu">
-                    <h3 class="title">Меню сайта</h3>
+                    <?php if(!empty($h_menu)): ?>
+                        <h3 class="title"><?=$h_menu;?></h3>
+                    <?php endif; ?>
                     <nav class="" role="navigation">
                         <?php header_nav(); ?>
                     </nav>
@@ -51,10 +51,9 @@
                     <a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" title="Home" aria-label="Home">
                        <img  width="187" height="48" src="<?= esc_url( wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' )[0] ); ?>" alt="<?php bloginfo('name'); ?>">
                     </a>
-                    <div>Медицинские услуги предоставляются ООО «Клиника 112» </div>
-                    <div>Адрес: 350049, Краснодар, улица Трамвайная, 15/1</div>
-                    <div><strong>Лицензия № ЛО-23-01-014381 от 27.02.2020 г.ОГРН 1162375010203  ИНН 2311211375</strong></div>
-                    <div>Все цены, предоставленные сайтом, не являются публичной офертой и имеют исключительно информационный характер.</div>
+                    <?php if(!empty($description)): ?>
+                       <?=$description;?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

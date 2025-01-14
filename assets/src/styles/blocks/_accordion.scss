@@ -1,0 +1,107 @@
+@use '../helpers' as *;
+
+.accordion {
+  border-bottom: 1px solid var(--color-gray-10);
+  padding: fluid(24, 18);
+  &:first-child{
+    border-top: 1px solid var(--color-gray-10);
+  }
+  &__details {
+    &[open] {
+      .accordion__title {
+        .btn-icon{
+          background: var(--color-light-10);
+          border-color: var(--color-light-10);
+          &::before,
+          &::after {
+            background-color: var(--color-accent);
+          }
+
+          &::after {
+            rotate: 0deg;
+          }
+        }
+      }
+
+      & + .accordion__content {
+        grid-template-rows: 1fr;
+      }
+    }
+  }
+
+  &__summary {
+    color: var(--color-light);
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &__title {
+    @include fluid-text(20, 16);
+    position: relative;
+    transition: all .3s ease-in-out;
+    color: var(--color-dark);
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    span{
+      padding-right: rem(50);
+    }
+    .btn-icon {
+      border-radius: 100px;
+      padding: 4px;
+      width: 30px;
+      height: 30px;
+      background: var(--color-secondary);
+      top: rem(-7);
+      position: absolute;
+      right: 0;
+      @include media(sm){
+        padding: 8px;
+        width: 40px;
+        height: 40px;
+      }
+      &::before,
+      &::after{
+        @include abs-y;
+        content: '';
+        right: 0;
+        left: 30%;
+        width: rem(12);
+        height: rem(2);
+        background-color: var(--color-light);
+        border-radius: 1rem;
+        @include media(sm){
+          width: rem(16);
+        }
+      }
+
+      &::after {
+        rotate: 90deg;
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition-duration: 0.3s;
+
+    &-inner {
+      overflow: hidden;
+    }
+
+    &-body {
+      --offsetTop: #{fluid(24, 16)};
+      padding-top: var(--offsetTop);
+      line-height: 1.5;
+      max-width: 100%;
+      width: 100%;
+      @include media(sm){
+        max-width: 80%;
+      }
+    }
+  }
+}

@@ -37,10 +37,10 @@ $specialist_loop = new WP_Query($args);
                             <div class="services__photo">
                                 <?php med_plus_post_thumbnail();?>
                             </div>
-                            <?php if( have_rows('services') ): ?>
-                                <?php while( have_rows('services') ): the_row(); ?>
+                            <?php if( have_rows('components') ): ?>
+                                <?php while( have_rows('components') ): the_row(); ?>
                                     <?php
-                                    if( get_row_layout() == 'services_welcome' ): ?>
+                                    if( get_row_layout() == 'welcome' ): ?>
                                         <div class="specialist__experience"><?php echo the_sub_field('price'); ?> ₽</div>
                                     <?php endif;
                                 endwhile; ?>
