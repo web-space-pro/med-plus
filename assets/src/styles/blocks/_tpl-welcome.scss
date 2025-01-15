@@ -41,25 +41,9 @@
   .infoBox{
     display: flex;
     align-items: stretch;
-
   }
 }
 
-.mark{
-  @include fluid-text(16, 14);
-  border: 1px solid var(--color-gray-10);
-  border-radius: 8px;
-  padding: 8px 16px;
-  display: inline-block;
-}
-
-.mark-price{
-  border-radius: 0 8px 8px 0;
-  background: var(--color-light);
-  padding: rem(5) rem(25);
-  display: inline-flex;
-  align-items: center;
-}
 
 .guarantee-list{
   list-style: none;
@@ -94,28 +78,5 @@
   margin-bottom: fluid(40, 20);
   &__title{
     margin-bottom: fluid(40, 20);
-  }
-}
-
-.wp-block-content{
-  line-height: 1.5;
-  h2{
-    margin-bottom: fluid(18, 16);
-    line-height: 1.5;
-  }
-  h3{
-    line-height: 1.5;
-    margin-bottom: fluid(16, 14);
-  }
-  h4{
-    margin-bottom: fluid(14, 12);
-  }
-}
-
-.tplContent{
-  &__text{
-    max-width: rem(740);
-    width: 100%;
-    margin: 0 auto;
   }
 }

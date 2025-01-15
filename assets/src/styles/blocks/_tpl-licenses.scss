@@ -1,0 +1,56 @@
+@use '../helpers' as *;
+
+.tplLicenses{
+  padding: rem(40) 0;
+  &__wrap{
+    max-width: rem(742);
+    width: 100%;
+    margin: 0 auto;
+  }
+  &__heading{
+    margin-bottom: fluid(40, 24);
+  }
+  &__title{
+    @include fluid-text(28,22);
+    font-weight: 600;
+    line-height: 114%;
+  }
+  &__list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(16);
+    @include media(sm){
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include media(md){
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+  &__item{
+    max-width: rem(136);
+    margin: 0 auto;
+    transition: all .1s ease-in;
+    figure{
+      height: rem(192);
+      border-radius: rem(8);
+      overflow: hidden;
+      img{
+        width: 100%;
+        height: 100%;
+        object-position: center;
+        object-fit: cover;
+      }
+    }
+    .title, .captions{
+      font-size: rem(12);
+    }
+    .captions{
+      color: var(--color-gray-20);
+      text-transform: uppercase;
+      margin-top: rem(6);
+    }
+    &:hover{
+      transform: scale(1.15);
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use '../helpers' as *;
+
+.tpl-contactInfo{
+    .wrap{
+        display: flex;
+        gap: rem(40);
+
+    }
+    .cta-icon-block{
+        margin: 0;
+    }
+}

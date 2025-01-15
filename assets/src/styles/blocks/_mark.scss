@@ -1,0 +1,16 @@
+@use '../helpers' as *;
+.mark{
+  @include fluid-text(16, 14);
+  border: 1px solid var(--color-gray-10);
+  border-radius: 8px;
+  padding: 8px 16px;
+  display: inline-block;
+}
+
+.mark-price{
+  border-radius: 0 8px 8px 0;
+  background: var(--color-light);
+  padding: rem(5) rem(25);
+  display: inline-flex;
+  align-items: center;
+}

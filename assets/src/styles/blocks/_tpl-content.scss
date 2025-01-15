@@ -1,0 +1,33 @@
+@use '../helpers' as *;
+
+.tplContent{
+  &__text{
+    max-width: rem(740);
+    width: 100%;
+    margin: 0 auto;
+    padding: rem(40) 0;
+  }
+  &__title{
+    font-weight: 600;
+    margin-bottom: fluid(18, 16);
+    line-height: 1.5;
+    span{
+      color: var(--color-secondary);
+    }
+  }
+
+}
+.wp-block-content{
+  line-height: 1.5;
+  h2{
+    margin-bottom: fluid(18, 16);
+    line-height: 1.5;
+  }
+  h3{
+    line-height: 1.5;
+    margin-bottom: fluid(16, 14);
+  }
+  h4{
+    margin-bottom: fluid(14, 12);
+  }
+}
