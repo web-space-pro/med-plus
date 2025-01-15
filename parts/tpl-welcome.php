@@ -7,6 +7,7 @@
     $guaranteeList = get_sub_field('guarantee-list');
     $sliderBanner = get_sub_field('slider-banner');
     $metrics = get_sub_field('metrics');
+    $show_map = get_sub_field('show_map');
 
 ?>
 <section class="tplWelcome">
@@ -85,6 +86,14 @@
                     <?php endforeach; ?>
                 </div>
             </div>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <?php if($show_map): ?>
+    <div class="tplMap">
+        <div class="container-secondary">
+            <div id="map"></div>
         </div>
     </div>
     <?php endif; ?>

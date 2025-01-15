@@ -2017,6 +2017,18 @@ textarea:focus {
   font-size: 0.75rem;
 }
 
+#map {
+  height: 20rem;
+  filter: grayscale(70%);
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  #map {
+    height: 25rem;
+  }
+}
+
 .tplContact {
   text-align: center;
   padding: 2.5rem 0;
@@ -2616,4 +2628,8 @@ textarea:focus {
   .tpl-cardCost .grid-column-4 {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+
+.tplMap {
+  padding: 2.5rem 0;
 }
