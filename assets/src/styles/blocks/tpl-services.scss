@@ -18,6 +18,7 @@
   }
   .title{
     margin-bottom: rem(16);
+    font-weight: 600;
     @include media(md){
       margin-bottom: 0;
     }
@@ -77,15 +78,15 @@
     border-radius: 0 8px 0 0;
     padding: 8px 12px;
     background: var(--color-light);
-    font-weight: 400;
-    font-size: 12px;
-    color: var(--color-dark-40);
+    font-weight: 600;
+    font-size: rem(16);
+    color: var(--color-accent);
   }
   &__title{
     margin-top: rem(16);
     margin-bottom: rem(10);
     h3{
-      font-weight: 400;
+      font-weight: 600;
       @include fluid-text(20, 14);
       color: var(--color-black);
       margin: 0;

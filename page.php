@@ -33,13 +33,11 @@ get_header();
                 }
             else:
                 ?>
-                <section class="mt-10">
-                    <div class="bg-black-400 relative rounded-2xl mx-4 md:mx-10 py-8 xl:py-16">
-                        <div class="container">
-                            <?php
-                                 get_template_part( 'template-parts/content', get_post_type() );
-                            ?>
-                        </div>
+                <section>
+                    <div class="container">
+                        <?php
+                        get_template_part( 'template-parts/content', get_post_type() );
+                        ?>
                     </div>
                 </section>
             <?php

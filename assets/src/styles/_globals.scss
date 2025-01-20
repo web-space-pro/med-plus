@@ -63,20 +63,20 @@ h1, .h1 {
 
 h2, .h2 {
   @include fluid-text(40, 28);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 120%;
   color: var(--color-dark);
 }
 
 h3, .h3 {
   @include fluid-text(20, 18);
-  font-weight: 400;
+  font-weight: 600;
   color: var(--color-dark);
 }
 
 h4, .h4 {
   @include fluid-text(18, 16);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 h5, .h5 {
@@ -130,7 +130,7 @@ a.link-icon{
     background-size: contain;
     width: rem(7);
     display: block;
-    top: rem(6);
+    top: rem(4);
     position: relative;
     margin-left: 10px;
   }

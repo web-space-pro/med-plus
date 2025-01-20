@@ -1,5 +1,6 @@
 @use '../helpers' as *;
 .tplMetrics{
+  padding-bottom: rem(40);
   position: relative;
   z-index: 2;
 }

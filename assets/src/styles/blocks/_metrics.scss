@@ -45,5 +45,9 @@
 
   &__title {
     font-weight: 400;
+    span{
+      font-weight: 600;
+      color: var(--color-dark-40);
+    }
   }
 }

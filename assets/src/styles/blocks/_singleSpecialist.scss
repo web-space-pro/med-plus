@@ -1,0 +1,34 @@
+@use '../helpers' as *;
+
+.singleSpecialist{
+  margin: fluid(40, 20) 0;
+  &__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: rem(16);
+    @include media(md){
+      gap: rem(24);
+      flex-direction: row;
+    }
+  }
+  .wrap{
+    &-title{
+      div{
+        margin-bottom: rem(8);
+        @include fluid-text(22,18)
+      }
+    }
+    &-image{
+      max-width: 100%;
+      width: fluid(400, 300);
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+  }
+}

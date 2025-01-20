@@ -5,10 +5,13 @@
   padding: rem(40) 0;
   &__bg{
     border-radius: 20px;
+    position: relative;
+    overflow: hidden;
     background: var(--color-light-10);
     padding: rem(40) rem(20);
   }
   .title{
+    z-index: 2;
     margin-bottom: rem(18);
     @include media(md){
       margin-bottom: rem(24);
@@ -21,15 +24,33 @@
   .subtitle{
     @include fluid-text(17,14);
     font-weight: 400;
+    z-index: 2;
     margin-bottom: rem(18);
     color: var(--color-gray-20);
     @include media(md){
       margin-bottom: rem(24);
     }
   }
+  &__bgElem{
+    position: absolute;
+    img{
+      width: 100%;
+    }
+    &.first{
+      top: 0;
+      left: 0;
+    }
+    &.second{
+      bottom: -2px;
+      right: 0;
+
+    }
+  }
 }
 
 .wpcf7-form{
+  z-index: 2;
+  position: relative;
   max-width: rem(750);
   margin: 0 auto;
   label{

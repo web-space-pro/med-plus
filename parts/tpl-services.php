@@ -41,7 +41,7 @@ $specialist_loop = new WP_Query($args);
                                 <?php while( have_rows('components') ): the_row(); ?>
                                     <?php
                                     if( get_row_layout() == 'welcome' ): ?>
-                                        <div class="specialist__experience"><?php echo the_sub_field('price'); ?> ₽</div>
+                                        <div class="services__experience"><?php echo the_sub_field('price'); ?> ₽</div>
                                     <?php endif;
                                 endwhile; ?>
                             <?php endif; ?>
