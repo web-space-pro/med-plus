@@ -1,8 +1,12 @@
 @use '../helpers' as *;
 
 .tpl-cardCost{
-  margin-top: rem(80);
-  margin-bottom: rem(40);
+  margin-top: rem(40);
+  margin-bottom: rem(20);
+  @include media(md){
+    margin-top: rem(80);
+    margin-bottom: rem(40)
+  }
   &__header{
     margin-bottom: rem(40);
     span{

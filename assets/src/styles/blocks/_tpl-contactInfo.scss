@@ -3,7 +3,12 @@
 .tpl-contactInfo{
     .wrap{
         display: flex;
-        gap: rem(40);
+        flex-direction: column;
+        gap: rem(16);
+        @include media(md){
+            flex-direction: row;
+            gap: rem(40);
+        }
 
     }
     .cta-icon-block{

@@ -1,4 +1,7 @@
 @use '../helpers' as *;
 .tplMap{
-  padding: rem(40) 0;
+  padding: rem(20) 0;
+  @include media(md){
+    padding: rem(40) 0;
+  }
 }

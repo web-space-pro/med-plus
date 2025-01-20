@@ -1,7 +1,10 @@
 @use '../helpers' as *;
 
 .tplLicenses{
-  padding: rem(40) 0;
+  padding: rem(20) 0;
+  @include media(md){
+    padding: rem(40) 0;
+  }
   &__wrap{
     max-width: rem(742);
     width: 100%;

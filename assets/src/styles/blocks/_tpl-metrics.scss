@@ -1,6 +1,9 @@
 @use '../helpers' as *;
 .tplMetrics{
-  padding-bottom: rem(40);
+  padding-bottom: rem(20);
   position: relative;
   z-index: 2;
+  @include media(md){
+    padding-bottom: rem(40);
+  }
 }

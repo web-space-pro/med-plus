@@ -2,7 +2,10 @@
 
 .tplContact{
   text-align: center;
-  padding: rem(40) 0;
+  padding: rem(20) 0;
+  @include media(md){
+    padding: rem(40) 0;
+  }
   &__bg{
     border-radius: 20px;
     position: relative;

@@ -1,7 +1,10 @@
 @use '../helpers' as *;
 
 .tplConditions{
-  padding: rem(40) 0;
+  padding: rem(20) 0;
+  @include media(md){
+    padding: rem(40) 0;
+  }
   &__head{
     margin-bottom: rem(40);
     h2{
