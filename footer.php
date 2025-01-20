@@ -17,6 +17,7 @@ if (function_exists('get_field')) {
     $list_contact = get_field('op_fiiter_contacts_list', 'options');
     $h_menu = get_field('op_footer_header_menu', 'options');
     $description = get_field('op_footer_descriptions', 'options');
+    $develop = get_field('op_footer_develop', 'options');
 }
 ?>
 	<footer class="footer">
@@ -63,9 +64,11 @@ if (function_exists('get_field')) {
                     <div class="footer__copyright">
                         <p>&copy; <?= date('Y'); ?> Наркологическая клиника «Мед-Плюс»</p>
                     </div>
-                    <div class="footer__develop">
-                        <a href="#">Разработано в <span>wep-space.pro</span></a>
-                    </div>
+                    <?php if(!empty($develop)): ?>
+                        <div class="footer__develop">
+                            <a href="<?=$develop['link']?>" target="_blank"><?=$develop['zagolovok']?></a>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
