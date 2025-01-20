@@ -731,9 +731,6 @@ button.swiper-pagination-bullet {
 }
 
 @charset "UTF-8";
-/**
-  Нормализация блочной модели
- */
 *,
 ::before,
 ::after {
@@ -1024,6 +1021,9 @@ svg * {
   left: 100%;
 }
 
+html {
+  box-sizing: border-box;
+}
 html.is-lock {
   overflow: hidden;
 }
@@ -2699,21 +2699,6 @@ textarea:focus {
   color: var(--color-secondary);
 }
 
-.wp-block-content {
-  line-height: 1.5;
-}
-.wp-block-content h2 {
-  margin-bottom: clamp(1rem, 0.9597107438rem + 0.1652892562vw, 1.125rem);
-  line-height: 1.5;
-}
-.wp-block-content h3 {
-  line-height: 1.5;
-  margin-bottom: clamp(0.875rem, 0.8347107438rem + 0.1652892562vw, 1rem);
-}
-.wp-block-content h4 {
-  margin-bottom: clamp(0.75rem, 0.7097107438rem + 0.1652892562vw, 0.875rem);
-}
-
 .tplLicenses {
   padding: 2.5rem 0;
 }
@@ -2773,4 +2758,82 @@ textarea:focus {
 }
 .tplLicenses__item:hover {
   transform: scale(1.15);
+}
+
+.gutenberg {
+  margin-top: 2.5rem;
+}
+.gutenberg .wp-block-content {
+  margin: clamp(1.5625rem, 1.2603305785rem + 1.2396694215vw, 2.5rem) 0;
+}
+.gutenberg a {
+  color: var(--color-secondary);
+}
+.gutenberg a:hover {
+  text-decoration: underline;
+}
+
+.wp-block-content {
+  line-height: 1.5;
+}
+.wp-block-content h2 {
+  margin-bottom: clamp(1rem, 0.9597107438rem + 0.1652892562vw, 1.125rem);
+  line-height: 1.5;
+}
+.wp-block-content h3 {
+  line-height: 1.5;
+  margin-bottom: clamp(0.875rem, 0.8347107438rem + 0.1652892562vw, 1rem);
+}
+.wp-block-content h4 {
+  margin-bottom: clamp(0.75rem, 0.7097107438rem + 0.1652892562vw, 0.875rem);
+}
+
+.wp-block-separator {
+  margin-bottom: 1rem;
+}
+
+.wp-block-image {
+  margin: clamp(3.125rem, 2.6213842975rem + 2.0661157025vw, 4.6875rem) 0;
+}
+.wp-block-image img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.wp-block-cover {
+  margin: clamp(3.125rem, 2.6213842975rem + 2.0661157025vw, 4.6875rem) 0;
+}
+
+.wp-block-quote {
+  border-left: 0.25em solid;
+  margin: 0 0 1.75em;
+  padding-left: 1em;
+}
+
+.wp-block-table {
+  margin: 0 0 1em;
+}
+.wp-block-table table {
+  border-collapse: collapse;
+}
+
+.wp-block-gallery {
+  display: flex;
+  gap: 0.9375rem;
+  align-items: normal;
+}
+@media (min-width: 768px) {
+  .wp-block-gallery {
+    gap: 1.5625rem;
+  }
+}
+
+.wp-block-list {
+  list-style: inherit;
+  padding-left: 0.75rem;
+  margin: 1rem 0;
+}
+.wp-block-list li {
+  margin-bottom: 0.5rem;
 }

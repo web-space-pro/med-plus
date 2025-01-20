@@ -10,7 +10,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
-</article><!-- #post-<?php the_ID(); ?> -->
+    <div class="gutenberg">
+        <div>
+            <h1><?=the_title()?></h1>
+        </div>
+        <div class="wp-block-content">
+            <?=get_the_content();?>
+        </div>
+    </div>
+</article>

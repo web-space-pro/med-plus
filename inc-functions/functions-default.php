@@ -21,6 +21,9 @@ function med_plus_theme_setup() {
     //Add Thumbnail Theme support
     add_theme_support( 'post-thumbnails' );
 
+    // Add support for block styles.
+   // add_theme_support( 'wp-block-styles' );
+
     /*
         * Switch default core markup for search form, comment form, and comments
         * to output valid HTML5.

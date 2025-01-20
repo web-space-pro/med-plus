@@ -1,6 +1,6 @@
 @use 'helpers' as *;
-
 html {
+  box-sizing: border-box;
   &.is-lock {
     overflow: hidden;
   }
