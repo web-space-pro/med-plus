@@ -6,6 +6,8 @@ try {
    require("./modules/menu");
    require("./modules/generall");
    require("./modules/swiper");
+   require("./modules/photoSwipe");
+   require("./modules/toogleBtn");
 
 
 

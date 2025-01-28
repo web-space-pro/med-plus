@@ -2,6 +2,7 @@ import Swiper from 'swiper';
 import {Autoplay, EffectFade, Navigation, Pagination, Manipulation} from 'swiper/modules';
 
 
+
 Swiper.use([Navigation, Pagination, Autoplay, EffectFade, Manipulation]);
 
 

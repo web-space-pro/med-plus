@@ -1,6 +1,7 @@
 @use '../helpers' as *;
 
 .tpl-contactInfo{
+    padding-bottom: rem(20);
     .wrap{
         display: flex;
         flex-direction: column;

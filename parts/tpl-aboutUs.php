@@ -3,10 +3,12 @@ if ( function_exists('get_field') ) {
     $title  = get_sub_field('title');
     $text  = get_sub_field('text');
     $link  = get_sub_field('link');
+    $btn  = get_sub_field('knopka');
     $photo = get_sub_field('photo');
+    $additional = get_sub_field('additional_text');
+    $set_btn = get_sub_field('set_btn');
 
     $show_template = get_sub_field('show_custom_template');
-
 }
 ?>
 <?php if( $show_template ): ?>
@@ -28,8 +30,12 @@ if ( function_exists('get_field') ) {
                             </div>
                         <?php endif; ?>
 
-                        <?php if( isset($link) && !empty($link['url'])): ?>
-                            <a class="button button--bordered" href="<?=$link['url'];?>" target="<?=$link['target'];?>" ><?=$link['title'];?></a>
+                        <?php if($set_btn['value'] == 'btn'): ?>
+                            <a class="button button--bordered" href="<?=$link['url'];?>" data-toggle="tpl-aboutUs__additional" target="#" ><?=$btn;?></a>
+                        <?php elseif($set_btn['value'] == 'link'): ?>
+                            <?php if( isset($link) && !empty($link['url'])): ?>
+                                <a class="button button--bordered" href="<?=$link['url'];?>" target="<?=$link['target'];?>" ><?=$link['title'];?></a>
+                            <?php endif; ?>
                         <?php endif; ?>
                     </div>
                     <?php if(!empty($photo)): ?>
@@ -40,6 +46,11 @@ if ( function_exists('get_field') ) {
                         </div>
                     <?php endif; ?>
                 </div>
+                <?php if(!empty($additional)): ?>
+                    <div class="tpl-aboutUs__additional hidden">
+                        <?=$additional;?>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>

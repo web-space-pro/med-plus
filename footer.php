@@ -45,7 +45,7 @@ if (function_exists('get_field')) {
                         <h3 class="title"><?=$h_menu;?></h3>
                     <?php endif; ?>
                     <nav class="" role="navigation">
-                        <?php header_nav(); ?>
+                        <?php footer_nav(); ?>
                     </nav>
                 </div>
                 <div class="footer__info">
@@ -75,6 +75,7 @@ if (function_exists('get_field')) {
 	</footer>
 
 <?php wp_footer(); ?>
+
 
 </body>
 </html>

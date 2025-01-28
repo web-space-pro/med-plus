@@ -21,7 +21,9 @@
             <?php if(!empty($sta_item)) : ?>
                 <div class="card-cost cta">
                     <h3><?=$sta_item['title']?></h3>
-                    <a class="button button--light" href="<?=$sta_item['link']['url']?>"><?=$sta_item['link']['title']?></a>
+                    <?php if(!empty($sta_item['link']['url'])) : ?>
+                        <a class="button button--light" href="<?=$sta_item['link']['url']?>"><?=$sta_item['link']['title']?></a>
+                    <?php endif; ?>
                 </div>
             <?php endif; ?>
         </div>

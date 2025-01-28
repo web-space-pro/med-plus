@@ -1,0 +1,9 @@
+@use '../helpers' as *;
+
+.tplQuestions{
+  padding-top: fluid(40, 20);
+  margin-bottom: fluid(40, 20);
+  &__title{
+    margin-bottom: fluid(40, 20);
+  }
+}

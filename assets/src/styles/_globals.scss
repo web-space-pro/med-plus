@@ -112,11 +112,8 @@ a {
 
 
 
-a,
-button {
-  &[aria-label] {
-    position: relative;
-  }
+a{
+  position: relative;
 }
 
 a.link-icon{
@@ -137,4 +134,9 @@ a.link-icon{
   @include hover {
     text-decoration: underline;
   }
+}
+
+.hidden{
+  display: none;
+  transition: all .3s ease;
 }

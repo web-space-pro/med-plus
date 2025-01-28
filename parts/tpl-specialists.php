@@ -2,21 +2,8 @@
 if ( function_exists('get_field') ) {
     $title  = get_sub_field('title');
     $link  = get_sub_field('link');
-    $persons = get_sub_field('persons');
+    $persons = get_sub_field('list');
 }
-
-
-?>
-<?php
-// Получаем записи всех участников ( кроме текущего )
-$args = array(
-    'post_type' => 'specialists',
-    'posts_per_page' => 4,
-    'orderby' => 'date',
-    'order' => 'DESC',
-);
-
-$specialist_loop = new WP_Query($args);
 ?>
 <section id="specialist" class="tplSpecialist">
     <div class="container">
@@ -25,20 +12,20 @@ $specialist_loop = new WP_Query($args);
                 <h2 class="title"><?=$title;?></h2>
             <?php endif; ?>
             <?php if( isset($link) && !empty($link['url'])): ?>
-                <a class="link-icon" href="<?=$link['url'];?>" target="<?=$link['target'];?>" ><?=$link['title'];?></a>
+                <a class="link-icon" data-toggle="hidden-content" href="<?=$link['url'];?>" target="<?=$link['target'];?>" ><?=$link['title'];?></a>
             <?php endif; ?>
         </div>
-        <?php if ($specialist_loop->have_posts()) : ?>
+        <?php if (!empty($persons)) : ?>
         <div class="tplSpecialist__loop">
-            <?php while ($specialist_loop->have_posts()) : $specialist_loop->the_post(); ?>
-                <figure class="specialist__card">
-                    <a href="<?=get_permalink()?>" target="_self">
-                        <div class="relative">
-                            <div class="specialist__photo">
-                                <?php med_plus_post_thumbnail();?>
-                            </div>
-                            <?php if( have_rows('specialist') ): ?>
-                                <?php while( have_rows('specialist') ): the_row(); ?>
+            <?php foreach ($persons as $key=> $person):?>
+                <figure class="specialist__card <?=($key >=4 ) ? 'hidden hidden-content':''?>">
+                    <?php //var_dump($person);?>
+                    <div class="relative">
+                        <div class="specialist__photo">
+                            <?= get_the_post_thumbnail($person->ID);?>
+                        </div>
+                        <?php if( have_rows('specialist', $person->ID) ): ?>
+                                <?php while( have_rows('specialist', $person->ID) ): the_row(); ?>
                                     <?php
                                     if( get_row_layout() == 'specialist' ): ?>
                                         <div class="specialist__experience"><?php echo the_sub_field('experience'); ?></div>
@@ -46,21 +33,20 @@ $specialist_loop = new WP_Query($args);
                                 endwhile; ?>
                             <?php endif; ?>
 
+                    </div>
+                    <div class="specialist__author">
+                            <h3> <?=get_the_title($person->ID)?></h3>
                         </div>
-                        <div class="specialist__author">
-                            <h3> <?=get_the_title()?></h3>
-                        </div>
-                        <?php if( have_rows('specialist') ): ?>
-                            <?php while( have_rows('specialist') ): the_row(); ?>
+                    <?php if( have_rows('specialist', $person->ID) ): ?>
+                            <?php while( have_rows('specialist', $person->ID) ): the_row(); ?>
                                 <?php
                                 if( get_row_layout() == 'specialist' ): ?>
-                                    <div class="specialist__speciality"><?php echo the_sub_field('speciality'); ?></div>
+                                    <p class="specialist__speciality"><?php echo the_sub_field('speciality'); ?></p>
                                 <?php endif;
                             endwhile; ?>
                         <?php endif; ?>
-                    </a>
                 </figure>
-            <?php endwhile; else:
+            <?php endforeach; else:
                 echo '<p>Других  специалистов в этой категории пока нет.</p>';
             endif;
             wp_reset_postdata();

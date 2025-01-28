@@ -48,8 +48,10 @@
     }
   }
   &__photo{
-    background: linear-gradient(135deg, #72e0e0 0%, #5fbeed 50%, #1470cc 100%);
-    height: rem(232);
+    //background: linear-gradient(135deg, #72e0e0 0%, #5fbeed 50%, #1470cc 100%);
+    height: rem(150);
+    width: rem(150);
+    margin: 0 auto;
     border-radius: 8px;
     overflow: hidden;
     position: relative;

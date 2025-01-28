@@ -46,6 +46,8 @@
     }
     .title, .captions{
       font-size: rem(12);
+      line-height: 1.2;
+      display: inline-block;
     }
     .captions{
       color: var(--color-gray-20);

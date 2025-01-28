@@ -9,26 +9,22 @@
                 <h3 class="tplLicenses__title"><?=$title?></h3>
             </div>
             <?php if(!empty($licenses)): ?>
-                <div class="tplLicenses__list">
+                <div class="tplLicenses__list pswp-gallery pswp-gallery--single-column" id="gallery">
                     <?php foreach ($licenses as $item): ?>
                         <?php
-                        $text = $item['file']['caption'];
+                        $text = $item['name'];
                         $maxLength = 35;
                         $trimmedText = mb_substr($text, 0, $maxLength) . (mb_strlen($text) > $maxLength ? "..." : "");
                         ?>
                         <div class="tplLicenses__item">
-                            <a href="<?=$item['file']['url']?>" target="_blank">
+                            <a href="<?=$item['img_preview']?>" data-pswp-width="400" data-pswp-height="590" data-pswp-srcset>
                                 <figure>
-                                    <img src="<?=$item['img_preview']?>" alt="<?=bloginfo();?>" width="100%" height="100%">
+                                    <img data-pswp-srcset src="<?=$item['img_preview']?>" alt="<?=bloginfo();?>" width="100%" height="100%">
                                 </figure>
                             </a>
                             <?php if(!empty($trimmedText)): ?>
-                                <a class="title" href="<?=$item['file']['url']?>" target="_blank"><?=$trimmedText;?></a>
+                                <span class="title"><?=$trimmedText;?></span>
                             <?php endif; ?>
-                            <div class="captions">
-                                <span><?=$item['file']['subtype']?>,</span>
-                                <span><?=formatSizeUnits($item['file']['filesize'])?></span>
-                            </div>
                         </div>
                     <?php endforeach; ?>
                 </div>

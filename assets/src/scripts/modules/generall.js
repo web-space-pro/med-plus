@@ -7,7 +7,7 @@
         let location = window.location.origin;
         let headerHeight = $('header').innerHeight();
 
-        if ($('#' + target).length) {
+        if (target.length && $('#' + target).length) {
             $('html, body').animate({
                 scrollTop: $('#' + target).offset().top - headerHeight
             }, 'fast');
@@ -23,7 +23,7 @@
         let target = href.split('#')[1];
         let headerH = $('header').innerHeight();
 
-        if ($('#' + target).length) {
+        if (target.length && $('#' + target).length) {
             $('html, body').animate({
                 scrollTop: $('#' + target).offset().top - headerH
             }, 'fast');

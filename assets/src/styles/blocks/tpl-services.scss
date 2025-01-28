@@ -94,7 +94,9 @@
       @include fluid-text(20, 14);
       color: var(--color-black);
       margin: 0;
-      padding-right: 30%;
+      @include media(md){
+        padding-right: 30%;
+      }
     }
   }
 }
